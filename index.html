@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Perfil Personal - Juan David</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <canvas id="bannerCanvas"></canvas>
+        <img src="../ima1.jpeg" alt="Foto de perfil" class="profile-pic">
+    </div>
+
+    <div class="content">
+        <h1>Juan David</h1>
+        <p class="subtitle">ESTUDIANTE | DESARROLLADOR WEB FULL STACK</p>
+
+        <div class="section">
+            <h2>Sobre mí</h2>
+            <p class="about-text">
+                Como apasionado del desarrollo web y el diseño de interfaces, mi objetivo central es fusionar la estética visual con una arquitectura técnica robusta. Me especializo en crear aplicaciones que no solo impacten visualmente, sino que sean altamente funcionales, intuitivas y centradas en la experiencia del usuario final.
+                <br><br>
+                Cuento con un fuerte interés y experiencia en la implementación de <strong>bases de datos en la nube</strong>, lo que me permite diseñar sistemas escalables donde la integridad y disponibilidad de la información son la prioridad.
+            </p>
+            <ul>
+                <li><strong>Manejo de Datos en la Nube:</strong> SQL/NoSQL.</li>
+                <li><strong>Desarrollo con React:</strong> Interfaces modernas.</li>
+                <li><strong>Arquitectura Escalable:</strong> Soluciones robustas.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Habilidades Técnicas</h2>
+            <div class="skills">
+                <span>HTML5 / CSS3</span><span>JAVASCRIPT (ES6+)</span><span>REACT</span><span>DJANGO</span><span>CLOUD DATABASES</span><span>GIT & GITHUB</span><span>SQL & NOSQL</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Galería de Proyectos</h2>
+            
+            <!-- Controles de la galería -->
+            <div class="projects-header">
+                <!-- Botones de filtrado por categoría -->
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="todos">Todos</button>
+                    <button class="filter-btn" data-filter="frontend">Frontend</button>
+                    <button class="filter-btn" data-filter="backend">Backend</button>
+                    <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+                </div>
+                
+                <!-- Botones de control adicionales -->
+                <div class="control-buttons">
+                    <button class="control-btn" id="toggleDetailBtn">Ver Detalles</button>
+                    <button class="control-btn" id="editImageBtn">Cambiar Tema</button>
+                </div>
+            </div>
+
+            <!-- Contenedor de tarjetas de proyectos -->
+            <div class="projects-container" id="projectsContainer">
+                
+                <!-- PROYECTO 1: Gestión Escolar Cloud -->
+                <div class="project-card" data-category="fullstack">
+                    <div class="project-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);" data-icon="🏫">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Full Stack</span>
+                        <h3 class="project-title">Gestión Escolar Cloud</h3>
+                        <p class="project-description">Sistema avanzado de control escolar con persistencia de datos en la nube, gestión de estudiantes, calificaciones y reportes dinámicos.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">MongoDB</span>
+                        </div>
+                        <button class="edit-btn" onclick="changeProjectDetail(this)">Editar Descripción</button>
+                    </div>
+                </div>
+
+                <!-- PROYECTO 2: Portfolio Interactivo -->
+                <div class="project-card" data-category="frontend">
+                    <div class="project-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);" data-icon="🎨">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Frontend</span>
+                        <h3 class="project-title">Portfolio Interactivo</h3>
+                        <p class="project-description">Sitio personal desarrollado con Canvas API para animaciones dinámicas, efectos de partículas y transiciones suaves.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">HTML5</span>
+                            <span class="tech-badge">CSS3</span>
+                            <span class="tech-badge">Canvas API</span>
+                        </div>
+                        <button class="edit-btn" onclick="changeProjectDetail(this)">Editar Descripción</button>
+                    </div>
+                </div>
+
+                <!-- PROYECTO 3: API REST E-Commerce -->
+                <div class="project-card" data-category="backend">
+                    <div class="project-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);" data-icon="🛒">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Backend</span>
+                        <h3 class="project-title">API REST E-Commerce</h3>
+                        <p class="project-description">API robusta para plataforma de comercio electrónico con autenticación JWT, gestión de inventario y procesamiento de pagos.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Django</span>
+                            <span class="tech-badge">PostgreSQL</span>
+                            <span class="tech-badge">JWT</span>
+                        </div>
+                        <button class="edit-btn" onclick="changeProjectDetail(this)">Editar Descripción</button>
+                    </div>
+                </div>
+
+                <!-- PROYECTO 4: Dashboard Analítico -->
+                <div class="project-card" data-category="fullstack">
+                    <div class="project-image" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);" data-icon="📊">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Full Stack</span>
+                        <h3 class="project-title">Dashboard Analítico</h3>
+                        <p class="project-description">Panel de control en tiempo real con gráficas interactivas, visibilidad de métricas de negocio y exportación de reportes.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">D3.js</span>
+                            <span class="tech-badge">Firebase</span>
+                        </div>
+                        <button class="edit-btn" onclick="changeProjectDetail(this)">Editar Descripción</button>
+                    </div>
+                </div>
+
+                <!-- PROYECTO 5: Chat en Tiempo Real -->
+                <div class="project-card" data-category="fullstack">
+                    <div class="project-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);" data-icon="💬">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Full Stack</span>
+                        <h3 class="project-title">Chat en Tiempo Real</h3>
+                        <p class="project-description">Aplicación de mensajería instantánea con WebSockets, notificaciones en vivo, historial de conversaciones y soporte multimedia.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Socket.io</span>
+                            <span class="tech-badge">Express</span>
+                            <span class="tech-badge">Redis</span>
+                        </div>
+                        <button class="edit-btn" onclick="changeProjectDetail(this)">Editar Descripción</button>
+                    </div>
+                </div>
+
+                <!-- PROYECTO 6: Generador de QR Avanzado -->
+                <div class="project-card" data-category="frontend">
+                    <div class="project-image" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);" data-icon="📱">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Frontend</span>
+                        <h3 class="project-title">Generador de QR Avanzado</h3>
+                        <p class="project-description">Herramienta interactiva para generar códigos QR personalizados con estilos, descarga en múltiples formatos y tracking.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">JavaScript</span>
+                            <span class="tech-badge">QR Code Lib</span>
+                            <span class="tech-badge">Local Storage</span>
+                        </div>
+                        <button class="edit-btn" onclick="changeProjectDetail(this)">Editar Descripción</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer>© 2026 – JUAN DAVID</footer>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
